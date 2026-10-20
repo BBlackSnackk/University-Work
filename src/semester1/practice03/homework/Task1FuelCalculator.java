@@ -72,7 +72,6 @@ public class Task1FuelCalculator {
             System.out.println("-----------------------------------------------");
             System.out.println("Підсумкова сума до сплати:"+ finalCost);
             System.out.println("===============================================");
-            System.out.println("Abeme");
             }
 
             scanner.close();

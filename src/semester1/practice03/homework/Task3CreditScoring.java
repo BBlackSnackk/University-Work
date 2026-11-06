@@ -45,11 +45,11 @@ public class Task3CreditScoring {
             double monthlyPayment = loanAmount / loanMonths;
 
             System.out.println("Статус заявки: СХВАЛЕНО");
-            System.out.printf("Орієнтовний платіж/міс: %.2f грн%n", monthlyPayment);
+            System.out.printf("Орієнтовний платіж/міс: грн", monthlyPayment);
 
             if (monthlyIncome > 0) {
                 double paymentPercent = monthlyPayment / monthlyIncome * 100;
-                System.out.printf("Частка від доходу: %.1f%%%n", paymentPercent);
+                System.out.printf("Частка від доходу:      ", paymentPercent);
             }
 
             System.out.printf("Персональна ставка: %.1f%% річних%n", annualRate);

@@ -48,7 +48,7 @@ public class Task4PrimeFinder {
         System.out.println("Усього чисел у діапазоні:    " + totalNumbers);
         System.out.println("Знайдено простих чисел:      " + primeCount + " шт.");
         System.out.println("Сума всіх простих чисел:     " + primeSum);
-        System.out.printf("Частка простих чисел:        %.2f%%%n", percent);
+        System.out.printf("Частка простих чисел:      ", percent);
         System.out.println("==============================");
         scanner.close();
     }

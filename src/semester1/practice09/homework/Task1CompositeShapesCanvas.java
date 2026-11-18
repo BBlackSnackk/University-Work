@@ -1,6 +1,5 @@
 package semester1.practice09.homework;
 
-// Точка на площині
 class Point2D {
     private double x;
     private double y;
@@ -10,7 +9,6 @@ class Point2D {
         this.y = y;
     }
 
-    // конструктор копіювання (для захисного копіювання)
     public Point2D(Point2D other) {
         this.x = other.x;
         this.y = other.y;
@@ -41,7 +39,6 @@ class Point2D {
     }
 }
 
-// Абстрактна фігура, яка МАЄ точку центра (композиція)
 abstract class AbstractShape2D {
     private final String name;
     private final Point2D anchorPoint;
@@ -56,18 +53,17 @@ abstract class AbstractShape2D {
     }
 
     public Point2D getAnchorPoint() {
-        return new Point2D(anchorPoint); // віддаємо копію
+        return new Point2D(anchorPoint);
     }
 
     public void moveBy(double dx, double dy) {
-        anchorPoint.translate(dx, dy); // делегування
+        anchorPoint.translate(dx, dy);
     }
 
     public abstract double getArea();
 
     public abstract double getPerimeter();
 
-    // параметри конкретної фігури (r, a x b ...)
     protected abstract String getParams();
 
     @Override
@@ -157,7 +153,6 @@ class RightTriangle2D extends AbstractShape2D {
     }
 }
 
-// Полотно, яке містить масив фігур
 class GeometryCanvas {
     private final String title;
     private final AbstractShape2D[] shapes;
@@ -237,7 +232,6 @@ public class Task1CompositeShapesCanvas {
         Rectangle2D rect = new Rectangle2D("Плита-Б", new Point2D(10, 5), 4, 6);
         RightTriangle2D triangle = new RightTriangle2D("Клин-В", new Point2D(-3, 2), 3, 4);
 
-        // перевірка захисного копіювання
         center.translate(100, 100);
         Point2D copy = circle.getAnchorPoint();
         copy.translate(50, 50);

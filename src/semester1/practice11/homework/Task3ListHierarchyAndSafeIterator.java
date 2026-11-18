@@ -10,7 +10,6 @@ import java.util.ListIterator;
 
 public class Task3ListHierarchyAndSafeIterator {
 
-    // показуємо, що remove() всередині for-each ламає ітератор
     public static void demonstrateFailFastCrash(List<String> logs) {
         System.out.println("  ❌ Спроба викликати logs.remove() всередині for-each...");
         try {
@@ -26,7 +25,6 @@ public class Task3ListHierarchyAndSafeIterator {
         }
     }
 
-    // безпечне видалення через Iterator, працює для будь-якого List
     public static int purgeLogsByKeywordSafely(List<String> logs, String keyword) {
         Iterator<String> it = logs.iterator();
         int removed = 0;
@@ -40,7 +38,6 @@ public class Task3ListHierarchyAndSafeIterator {
         return removed;
     }
 
-    // trim через set, після ERROR додаємо маркер через add
     public static void enrichCriticalLogsWithListIterator(List<String> logs) {
         ListIterator<String> listIt = logs.listIterator();
         while (listIt.hasNext()) {
@@ -52,7 +49,6 @@ public class Task3ListHierarchyAndSafeIterator {
         }
     }
 
-    // йдемо з кінця до початку
     public static List<String> collectReverseOrder(List<String> logs) {
         List<String> reversed = new ArrayList<>();
         ListIterator<String> listIt = logs.listIterator(logs.size());
@@ -73,7 +69,7 @@ public class Task3ListHierarchyAndSafeIterator {
 
         System.out.println();
         System.out.println("[1. ДЕМОНСТРАЦІЯ ПАСТКИ FAIL-FAST У ЦИКЛІ FOR-EACH]:");
-        List<String> crashTest = new ArrayList<>(rawLogs); // окрема копія, щоб не зіпсувати дані
+        List<String> crashTest = new ArrayList<>(rawLogs);
         demonstrateFailFastCrash(crashTest);
 
         List<String> arrayLogs = new ArrayList<>(rawLogs);
